@@ -69,11 +69,11 @@ def validar_cpf(cpf):
 
 # Entrada do usuário
 entrada = input('Digite o CPF que deseja consultar: ')
+cpf_limpo = re.sub(r'[^0-9]', '', entrada)
 
 # Chama a função e exibe o resultado
 if validar_cpf(entrada):
     # Formata o CPF para exibição
-    cpf_formatado = f'{entrada[:3]}.{entrada[3:6]}.{entrada[6:9]}-{entrada[9:]}'
-    print(f'{cpf_formatado} é um CPF válido.')
+    print(f'{cpf_limpo} é um CPF válido.')
 else:
-    print(f'{entrada} é um CPF inválido.')
+    print(f'{cpf_limpo} é um CPF inválido.')
